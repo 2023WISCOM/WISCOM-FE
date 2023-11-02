@@ -13,9 +13,8 @@ const ImageSlider = () => {
   const [showArrows, setShowArrows] = useState(false);
 
   useEffect(() => {
-    const nextPostId = Number(post_id) + 1;
     // 정적 URL을 사용하여 데이터를 가져옵니다.
-    fetch(`http://13.124.248.135/posts/${nextPostId}/`, {
+    fetch(`https://dswuwis.store/posts/${post_id}/`, {
       method: 'GET',
     })
       .then((response) => response.json())
@@ -57,7 +56,7 @@ const ImageSlider = () => {
             <I.BannerImage
               key={index}
               className={`${index === currentIdx ? 'active' : ''}`}
-              src={`http://13.124.248.135/${image}`}
+              src={`https://dswuwis.store/${image}`}
               alt={`slide ${index}`}
             />
           ))}
