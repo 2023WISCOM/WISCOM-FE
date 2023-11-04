@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { useParams } from 'react-router-dom';
 import HashTag from './HashTag';
 import * as C from './CommentStyle';
 
@@ -9,6 +10,9 @@ const Comment = () => {
   const [name, setName] = useState(''); //이름
   const [selectedTags, setSelectedTags] = useState([]); //해시태그 선택
   const maxLength = 150; // 최대 글자 수
+
+  const { post_id } = useParams();
+  const postId = parseInt(post_id) + 1;
 
   const commentsPerPage = 6; // 한 페이지에 보일 댓글 수
   const [currentPage, setCurrentPage] = useState(1); //페이지
@@ -48,6 +52,20 @@ const Comment = () => {
     const date = getCurrentDate(); // yyyy-mm-dd
     // Add the new comment to the comments list
     const newCommentItem = { text: newComment, date, name, tags: selectedTags };
+    // console.log(postId);
+
+    // // 여기에서 POST 요청을 보냅니다.
+    // axios
+    //   .post(`http://13.124.248.135/posts/${postId}/comments`, newCommentItem)
+    //   .then((response) => {
+    //     console.log(response);
+    //     setComments([response.data, ...comments]);
+    //   })
+    //   .catch((error) => {
+    //     // 오류 처리를 적어줍니다.
+    //     console.error('There was an error submitting the comment:', error);
+    //   });
+
     setComments([newCommentItem, ...comments]);
     setNewComment(''); // 댓글 입력창 초기화
     setName(''); //이름 입력창 초기화
@@ -59,7 +77,15 @@ const Comment = () => {
   const tagList = ['1번', '2번', '3번', '4번', '5번'];
 
   const TagList = tagList.map((data, index) => {
-    return <HashTag tagName={data} key={index} isSelected={selectedTags.includes(data)} onTagClick={handleTagClick} />; //onTagClick={handleTagClick}
+    return (
+      <HashTag
+        tagName={data}
+        key={index}
+        isSelected={selectedTags.includes(data)}
+        onTagClick={handleTagClick}
+        style={{ flexShrink: '0', minWidth: '60px' }}
+      />
+    ); //onTagClick={handleTagClick}
   });
 
   // 현재 페이지의 댓글 배열
