@@ -7,24 +7,38 @@ export const ImageSliderContainer = styled.div`
 
   --arrow-size: 90px; /* 화살표 크기 변수 설정 */
   position: relative; /* 부모 클래스에 relative 포지션을 추가 */
-
   margin-bottom: 200px;
+
+  @media (min-width: 1441px) {
+    margin: 0 auto; /* 정렬 필수!!!!! */
+    margin-bottom: 100px;
+  }
+
+  @media (max-width: 425px) {
+    margin-bottom: 100px;
+  }
 `;
 
 export const SliderBannerWrap = styled.div`
-  width: 100%;
-  max-width: 1100px;
+  width: 1100px;
+  height: auto;
   position: relative;
   aspect-ratio: 11 / 7; /* 가로 세로 비율을 11:7로 고정 */
 
   border-radius: 30px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0.01px 0.01px rgba(0, 0, 0, 0.1);
   position: relative;
   display: flex;
   align-items: center;
 
+  margin-left: 10%;
+  margin-right: 10%;
+
   justify-content: center;
-  margin: 0 auto; /* 필수!!!!! */
+
+  @media (min-width: 1440px) {
+    width: 1400px;
+  }
 `;
 
 export const SlideBanner = styled.div`
@@ -36,12 +50,13 @@ export const SlideBanner = styled.div`
 export const BannerImage = styled.img`
   width: 100%;
   height: 100%;
-  object-fit: contain;
-  border-radius: 30px;
   position: absolute;
   left: 0;
   opacity: 0;
   transition: opacity 0.8s ease-in-out;
+
+  border-radius: 30px;
+  border: 3px solid rgba(0, 0, 0, 0.1);
 
   &.active {
     opacity: 1;
