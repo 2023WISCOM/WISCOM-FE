@@ -7,22 +7,40 @@ import BackYellow from '../../img/Project/BackgroundYellow.svg';
 
 const backgroundImages = [BackGreen, BackBlue, BackGreen, BackYellow];
 
-// 재사용 쉽도록 수정
-const Developer = () => {
+const Developer = ({ data }) => {
+  const developerLength = data && data.developer.length;
+  const upBoxData = data && data.developer.slice(2, developerLength);
+  const downBoxData = data && data.developer.slice(0, Math.min(2, developerLength));
   return (
     <D.DeveloperContainer>
-      <D.DeTitle>DEVELOPER</D.DeTitle>
-      <D.UpBox>
-        {backgroundImages.slice(0, 2).map((bg, index) => (
-          <DeveloperProfile key={index} bg={bg} />
-        ))}
-      </D.UpBox>
+      {data && (
+        <>
+          <D.DeTitle>DEVELOPER</D.DeTitle>
+          <D.UpBox>
+            {upBoxData.map((developer, index) => (
+              <DeveloperProfile
+                key={index}
+                bg={backgroundImages[index]}
+                image={developer.image}
+                name={developer.name}
+                impression={developer.impression}
+              />
+            ))}
+          </D.UpBox>
 
-      <D.DownBox>
-        {backgroundImages.slice(2).map((bg, index) => (
-          <DeveloperProfile key={index} bg={bg} />
-        ))}
-      </D.DownBox>
+          <D.DownBox>
+            {downBoxData.map((developer, index) => (
+              <DeveloperProfile
+                key={index}
+                bg={backgroundImages[Math.min(index + 2, backgroundImages.length - 1)]}
+                image={developer.image}
+                name={developer.name}
+                impression={developer.impression}
+              />
+            ))}
+          </D.DownBox>
+        </>
+      )}
     </D.DeveloperContainer>
   );
 };

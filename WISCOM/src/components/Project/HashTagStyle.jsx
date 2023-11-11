@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
 export const HashTagWrapper = styled.div`
-  width: 150px;
-  height: 70px;
+  width: 140px;
+  height: 60px;
   border-radius: 50px;
   background-color: #75ff72;
   color: #000;
@@ -12,30 +12,28 @@ export const HashTagWrapper = styled.div`
   justify-content: center;
   align-items: center;
 
-  @media screen and (min-width: 321px) and (max-width: 393px) {
-    width: 95px;
-    height: 25px;
-  }
 
-  @media screen and (min-width: 394px) and (max-width: 530px) {
-    width: 100px;
+  @media screen and (min-width: 320px) and (max-width: 530px) {
+    min-width: 60px;
     height: 30px;
   }
 
   @media screen and (min-width: 530px) and (max-width: 700px) {
-    width: 110px;
-    height: 40px;
+    min-width: 85px;
+    height: 35px;
+    white-space: nowrap:
   }
 
-  @media screen and (min-width: 701px) and (max-width: 900px) {
-    width: 140px;
-    height: 50px;
+  @media screen and (min-width: 700px) and (max-width: 900px) {
+    min-width: 120px;
+    height: 45px;
+    white-space: nowrap:
   }
 `;
 
 export const ClickedHashTagWrapper = styled.div`
-  width: 150px;
-  height: 70px;
+  width: 140px;
+  height: 60px;
   border-radius: 50px;
   background-color: #75ff72;
   margin-right: 20px;
@@ -46,44 +44,41 @@ export const ClickedHashTagWrapper = styled.div`
   color: white;
   box-shadow: 0px 5px 5px 5px rgb(0, 0, 0, 0.5) inset;
 
-  @media screen and (min-width: 321px) and (max-width: 393px) {
-    width: 95px;
-    height: 25px;
-  }
-
-  @media screen and (min-width: 394px) and (max-width: 530px) {
-    width: 100px;
+  @media screen and (min-width: 320px) and (max-width: 530px) {
+    min-width: 60px;
     height: 30px;
   }
 
   @media screen and (min-width: 530px) and (max-width: 700px) {
-    width: 110px;
-    height: 40px;
+    min-width: 85px;
+    height: 35px;
+    white-space: nowrap:
   }
 
-  @media screen and (min-width: 701px) and (max-width: 900px) {
-    width: 140px;
-    height: 50px;
+  @media screen and (min-width: 700px) and (max-width: 900px) {
+    min-width: 120px;
+    height: 45px;
+    white-space: nowrap:
   }
 `;
 
 export const HashTagSpan = styled.div`
-  font-size: 30px;
+  font-size: 24px;
   font-weight: bold;
 
   @media screen and (max-width: 393px) {
-    font-size: 8px;
+    font-size: 10px;
   }
 
-  @media screen and (min-width: 394px) and (max-width: 530px) {
+  @media screen and (min-width: 393px) and (max-width: 530px) {
     font-size: 11px;
   }
 
   @media screen and (min-width: 530px) and (max-width: 700px) {
-    font-size: 20px;
+    font-size: 16px;
   }
 
-  @media screen and (min-width: 701px) and (max-width: 900px) {
-    font-size: 24px;
+  @media screen and (min-width: 700px) and (max-width: 900px) {
+    font-size: 20px;
   }
 `;

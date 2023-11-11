@@ -6,7 +6,7 @@ export default function Folder() {
   return (
     <>
       <F.FolderWrapper>
-        <F.FolderGroup href="/project">
+        <F.FolderGroup href="/map">
           <motion.div
             whileHover={{
               scale: 1.2,
@@ -17,7 +17,7 @@ export default function Folder() {
           <F.FolderName>PROJECT</F.FolderName>
         </F.FolderGroup>
 
-        <F.FolderGroup href="/chatbot">
+        <F.FolderGroup href="/">
           <motion.div
             whileHover={{
               scale: 1.2,
@@ -25,7 +25,7 @@ export default function Folder() {
             }}>
             <F.Folder src={FolderImg}></F.Folder>
           </motion.div>
-          <F.FolderName>CHATBOT</F.FolderName>
+          <F.FolderName>DSWU</F.FolderName>
         </F.FolderGroup>
         <F.FolderGroup href="/guestbook">
           <motion.div
@@ -37,7 +37,7 @@ export default function Folder() {
           </motion.div>
           <F.FolderName>GUESTBOOK</F.FolderName>
         </F.FolderGroup>
-        <F.FolderGroup href="/qrcode">
+        <F.FolderGroup href="/">
           <motion.div
             whileHover={{
               scale: 1.2,
@@ -45,7 +45,7 @@ export default function Folder() {
             }}>
             <F.Folder src={FolderImg}></F.Folder>
           </motion.div>
-          <F.FolderName>QR-CODE</F.FolderName>
+          <F.FolderName>CSE</F.FolderName>
         </F.FolderGroup>
         <F.FolderGroup href="/developer">
           <motion.div
